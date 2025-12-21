@@ -23,3 +23,4 @@ All applications were installed remotely on the Ubuntu Server using SSH from the
 ### System Update
 ```bash
 sudo apt update && sudo apt upgrade -y
+sohan is hero
