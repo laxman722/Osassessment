@@ -38,8 +38,11 @@ sudo nano /etc/ssh/sshd_config
 ```
 
 The following configuration options were applied:
+
 PasswordAuthentication no
+
 PermitRootLogin no
+
 PubkeyAuthentication yes
 
 After making the changes, the configuration was validated to ensure there were no syntax errors:
