@@ -52,3 +52,47 @@ sudo apt install apache2 -y
 ![apache](../images/week3/apache.png)
 *Figure 5: Apache web server installation and service status confirming server application deployment.*
 
+Each installation was performed using the APT package manager to ensure software integrity and compatibility.
+
+---
+
+## 3. Expected Resource Profiles
+
+The expected resource profiles describe the anticipated impact of each selected application on system resources. These profiles provide a baseline for comparing observed performance during testing.
+
+| Application            | CPU Usage      | Memory Usage   | Disk I/O Usage | Network Usage |
+|------------------------|----------------|----------------|----------------|----------------|
+| stress-ng (CPU test)   | High           | Low            | Minimal        | None           |
+| stress-ng (RAM test)   | Moderate       | High           | Minimal        | None           |
+| fio                    | Low            | Low            | High           | None           |
+| iperf3                 | Low            | Low            | Minimal        | High           |
+| Apache Web Server      | Low–Moderate   | Low–Moderate   | Moderate       | Moderate       |
+
+CPU-intensive workloads are expected to place sustained load on the processor, while memory-intensive workloads increase RAM usage. Disk I/O tests generate frequent read and write operations, and network-intensive workloads consume available bandwidth. Server applications such as Apache are expected to use a combination of resources depending on request load.
+
+---
+
+## 4. Monitoring Strategy
+
+System performance is monitored remotely via SSH using standard Linux command-line tools. Monitoring is performed during idle states and while each application is actively running to identify changes in resource usage.
+
+### Monitoring Tools and Metrics
+
+- **CPU and Memory Monitoring**
+  - `top` is used to observe real-time CPU utilisation, running processes, and memory usage.
+  - `free -h` is used to verify memory consumption during RAM-intensive workloads.
+
+- **Disk I/O Monitoring**
+  - `df -h` is used to monitor disk space usage.
+  - Disk activity is observed during `fio` execution to identify I/O pressure.
+
+- **Network Monitoring**
+  - `ip addr` is used to confirm active network interfaces.
+  - `iperf3` output is used to measure bandwidth and network throughput.
+
+- **Service Monitoring**
+  - `systemctl status apache2` is used to confirm that the Apache web server is running correctly during testing.
+
+### Measurement Approach
+
+Each workload is executed individually to isolate its impact on system performance. Baseline measurements are taken before execution, followed by continuous observation while the application is running. Results are recorded and compared against the expected resource profiles to evaluate system behaviour under different workload conditions.
