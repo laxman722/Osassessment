@@ -23,4 +23,32 @@ All applications were installed remotely on the Ubuntu Server using SSH from the
 ### System Update
 ```bash
 sudo apt update && sudo apt upgrade -y
-sohan is hero
+```
+
+![update](../images/week3/update.png)
+*Figure 1: System update performed using the APT package manager prior to application installation.*
+
+```bash
+ssudo apt install stress-ng -y
+```
+![stress](../images/week3/stress.png)
+*Figure 2: Output from the `stress-ng` tool demonstrating CPU and memory intensive workload execution.*
+
+```bash
+sudo apt install fio -y
+```
+![fio](../images/week3/fio.png)
+*Figure 3: Disk I/O performance testing using the `fio` benchmarking tool.*
+
+```bash
+sudo apt install iperf3 -y
+```
+![iperf3](../images/week3/iperf3.png)
+*Figure 4: Network performance testing conducted using `iperf3` to measure throughput.*
+
+```bash
+sudo apt install apache2 -y
+```
+![apache](../images/week3/apache.png)
+*Figure 5: Apache web server installation and service status confirming server application deployment.*
+
