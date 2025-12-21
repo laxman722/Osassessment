@@ -99,7 +99,34 @@ This configuration ensures that SSH access is limited exclusively to the authori
 
 ---
 
-## User and Privilege Management Evidence
+## User and Privilege Management
+
+User privilege management was implemented to enforce the principle of least privilege and reduce the risk associated with unrestricted administrative access. A non-root administrative user was created to perform system administration tasks securely.
+
+The user account was created using the following command:
+
+```bash
+sudo adduser adminuser
+```
+
+Administrative privileges were granted by adding the user to the sudo group:
+
+```bash
+sudo usermod -aG sudo adminuser
+```
+
+The new account was verified by switching to the user and confirming its identity:
+
+```bash
+su - adminuser
+whoami
+```
+
+Controlled privilege escalation was tested using:
+
+```bash
+sudo whoami
+```
 
 ![user management](../images/week4/user_management.png)
 *Figure 5: Creation of a non-root administrative user and assignment of sudo privileges.*
