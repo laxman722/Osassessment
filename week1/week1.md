@@ -29,7 +29,7 @@ flowchart LR
 
     W -.-> V
     V -.-> S
-
+```
 --- 
 
 ## 3. Server Distribution Selection and Justification
