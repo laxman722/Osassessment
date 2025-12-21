@@ -82,14 +82,41 @@ System specifications were documented using command-line interface tools execute
 uname -a
 ```
 ![uname](../images/week1/uname.png)
-
+*Figure 2: Output of the `uname -a` command showing the Linux kernel version and system architecture of the Ubuntu Server.*
 
 ```bash
 free -h
 ```
+![free](../images/week1/freeh.png)
+*Figure 3: Output of the `free -h` command displaying total, used, and available system memory.*
 
+```bash
 df -h
+```
+![df](../images/week1/df.png)
+*Figure 4: Output of the `df -h` command showing disk usage and available storage on mounted file systems.*
 
+```bash
 ip addr
+```
+![ipaddr](../images/week1/ipaddr.png)
+*Figure 5: Output of the `ip addr` command confirming network interfaces and assigned NAT and host-only IP addresses.*
 
+```bash
 lsb_release -a
+```
+![lsb](../images/week1/lsb.png)
+*Figure 6: Output of the `lsb_release -a` command identifying the installed Linux distribution and version.*
+
+
+## Week 1 Reflection
+
+During Week 1, I planned and deployed a headless Ubuntu Server LTS system using Oracle VirtualBox, with a Windows host machine acting as the workstation. This phase helped me understand the importance of system planning before deployment, particularly when selecting an appropriate operating system, workstation environment, and network configuration.
+
+One of the key learning outcomes was understanding the difference between server and workstation roles. Deploying Ubuntu Server without a graphical interface highlighted how headless systems reduce resource usage and rely entirely on command-line administration. Using Windows PowerShell to manage the server via SSH demonstrated how remote administration is commonly performed in real-world server environments.
+
+A significant challenge encountered during this phase was configuring networking correctly within VirtualBox. Issues related to host-only adapters and IP address assignment required troubleshooting and a deeper understanding of how NAT and host-only networks function together. Resolving these issues improved my confidence in diagnosing network configuration problems and reinforced the importance of careful setup and verification.
+
+Documenting system specifications using CLI tools such as `uname`, `free`, `df`, and `ip addr` improved my familiarity with Linux command-line utilities and their role in system administration. Capturing and interpreting this output helped confirm that the system was correctly configured and operating as expected.
+
+Overall, this phase provided a strong foundation for future work by combining theoretical planning with practical implementation. The experience has improved my understanding of virtualised environments, headless server management, and secure remote access, which will be built upon in subsequent weeks.
