@@ -22,7 +22,7 @@ ssh-keygen -t ed25519
 *Figure 1: SSH key pair generation on the workstation to enable key-based authentication.*
 
 
-![ssh key login](../images/week4/ssh_key_login.png)
+![ssh key login](../images/week4/ssh_key_login1.png)
 *Figure 2: Successful SSH login to the server without a password, confirming key-based authentication.*
 
 ---
