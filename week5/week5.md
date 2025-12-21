@@ -56,6 +56,7 @@ cat /etc/apt/apt.conf.d/20auto-upgrades
 *Figure 3: Configuration file output confirming that unattended security updates are enabled.*
 
 Enabling automatic security updates helps maintain system security by ensuring timely patching of vulnerabilities without relying on manual administrator intervention.
+
 ---
 
 ![fail2ban start](../images/week5/start_fail2ban.png)
