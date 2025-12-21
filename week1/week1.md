@@ -80,8 +80,13 @@ System specifications were documented using command-line interface tools execute
 ### Kernel and Architecture Information
 ```bash
 uname -a
+```
+![uname](../images/week1/uname.png)
 
+
+```bash
 free -h
+```
 
 df -h
 
