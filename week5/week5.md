@@ -59,11 +59,37 @@ Enabling automatic security updates helps maintain system security by ensuring t
 
 ---
 
+## Intrusion Detection and Prevention with Fail2Ban
+
+Fail2Ban was implemented to provide intrusion detection and prevention by protecting the SSH service against brute-force authentication attempts. Fail2Ban monitors system log files for repeated failed login attempts and automatically blocks offending IP addresses using temporary firewall rules.
+
+Fail2Ban was installed on the server using the following command:
+
+```bash
+sudo apt install fail2ban -y
+```
+The Fail2Ban service was enabled and started to ensure it runs automatically on system startup:
+
+```BASH
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+```
 ![fail2ban start](../images/week5/start_fail2ban.png)
 *Figure 4: Fail2Ban service started and enabled to provide intrusion detection for SSH.*
 
+
+The status of Fail2Ban was verified to confirm that the service is active:
+```bash
+sudo systemctl status fail2ban
+```
+
+
+To confirm that the SSH protection jail was running and monitoring authentication attempts, the following command was used:
+
+```bash
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
+```
+
 ![fail2ban status](../images/week5/fail2ban.png)
 *Figure 5: Fail2Ban status output showing active monitoring of SSH authentication attempts.*
-
-
-Figure 1: AppArmor status showing active and enforcing security profiles.
