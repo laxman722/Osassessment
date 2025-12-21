@@ -96,3 +96,17 @@ System performance is monitored remotely via SSH using standard Linux command-li
 ### Measurement Approach
 
 Each workload is executed individually to isolate its impact on system performance. Baseline measurements are taken before execution, followed by continuous observation while the application is running. Results are recorded and compared against the expected resource profiles to evaluate system behaviour under different workload conditions.
+
+---
+
+## Week 3 Reflection
+
+During Week 3, I developed a deeper understanding of how different workload types impact system performance by selecting and preparing applications that stress specific system resources. Choosing tools such as `stress-ng`, `fio`, `iperf3`, and Apache helped me recognise how CPU, memory, disk I/O, network, and server-based workloads behave differently and why it is important to test each resource independently.
+
+One key learning outcome from this phase was the importance of defining expected resource profiles before conducting performance tests. By anticipating how each application should affect CPU usage, memory consumption, disk activity, and network throughput, I was able to create a clear baseline against which real performance results can later be compared. This improved my understanding of performance evaluation as a structured and methodical process rather than simple observation.
+
+The monitoring strategy reinforced my confidence in using command-line tools such as `top`, `free`, `df`, and `ip addr` to observe system behaviour in real time. Monitoring the system remotely via SSH highlighted how performance analysis is commonly carried out in real-world server environments without relying on graphical interfaces.
+
+Overall, this phase strengthened my ability to plan performance testing logically and professionally. The skills developed in application selection, expected resource analysis, and monitoring preparation provide a strong foundation for conducting and interpreting practical performance tests in the following weeks.
+
+---
