@@ -133,3 +133,15 @@ sudo whoami
 
 ![admin sudo privileges](../images/week4/adminuser_sudo_privileges.png)
 *Figure 6: Demonstration of privilege escalation using sudo by a non-root administrative user.*
+
+---
+
+## Week 4 Reflection
+
+During Week 4, I implemented foundational security controls on the headless Ubuntu Server using secure remote administration practices. Configuring SSH with key-based authentication and disabling password-based login improved my understanding of how secure access is enforced in real-world server environments. Preventing direct root login reinforced the importance of minimising attack surfaces and enforcing secure authentication mechanisms.
+
+Configuring the firewall to restrict SSH access to a single trusted workstation highlighted the role of network-level security in protecting server infrastructure. This task improved my confidence in applying firewall rules carefully while avoiding accidental loss of access. Testing the firewall configuration reinforced the importance of verification after making security changes.
+
+Creating a non-root administrative user and managing privileges using sudo demonstrated the principle of least privilege in practice. This helped me understand how administrative access can be controlled without relying on the root account, reducing the risk of accidental or malicious system changes.
+
+Overall, this phase strengthened my practical skills in secure server configuration, remote administration, and security validation. The experience has improved my confidence in deploying and managing Linux servers securely and provides a strong foundation for implementing advanced security and monitoring controls in later phases.
