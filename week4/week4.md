@@ -37,12 +37,17 @@ The SSH daemon configuration file was edited remotely via SSH using the followin
 sudo nano /etc/ssh/sshd_config
 ```
 
-The following configuration options were applied:
--PasswordAuthentication no
--PermitRootLogin no
--PubkeyAuthentication yes
+The following configuration options were applied to harden the SSH service:
 
-After making the changes, the configuration was validated to ensure there were no syntax errors:
+- `PasswordAuthentication no` – Disables password-based authentication to prevent brute-force login attempts.
+- `PermitRootLogin no` – Prevents direct SSH access using the root account.
+- `PubkeyAuthentication yes` – Enforces the use of SSH key-based authentication.
+
+After applying these changes, the SSH configuration was validated to ensure that no syntax errors were present:
+
+```bash
+sudo sshd -t
+
 
 ```bash
 sudo sshd -t
@@ -60,10 +65,37 @@ sudo systemctl restart ssh
 Successful passwordless SSH login confirmed that key-based authentication was correctly enforced.
 ---
 
-## Firewall Configuration Evidence
+## Firewall Configuration with Restricted SSH Access
+
+The Uncomplicated Firewall (UFW) was configured to restrict SSH access to a single trusted workstation, reducing the server’s exposure to unauthorised network connections.
+
+Default firewall policies were applied to deny all incoming traffic while allowing outgoing connections:
+
+```bash
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+SSH access was explicitly permitted only from the authorised workstation IP address:
+```bash
+sudo ufw allow from 192.168.56.1 to any port 22
+```
+
+The firewall was then enabled to enforce the configured rules:
+
+```bash
+sudo ufw enable
+```
+
+The firewall configuration was verified using the following command:
+
+```bash
+sudo ufw status verbose
+```
 
 ![ufw rules](../images/week4/ufw_firewall_rules.png)
 *Figure 4: UFW firewall ruleset showing SSH access restricted to a single trusted workstation IP address.*
+
+This configuration ensures that SSH access is limited exclusively to the authorised workstation, significantly reducing the risk of unauthorised remote access.
 
 ---
 
