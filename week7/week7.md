@@ -108,4 +108,8 @@ Overall, the system demonstrates a well-balanced security posture appropriate fo
 The security audit confirms that the server is securely configured, with strong access control, minimal network exposure, and comprehensive monitoring and logging. The system aligns well with industry best practices for small-scale server deployments and demonstrates effective application of defence-in-depth principles.
 
 
+Week 7 Reflection – Security Audit and System Evaluation
 
+In Week 7, a comprehensive security audit was conducted to evaluate the overall security posture of the Ubuntu Server. The Lynis audit tool was used to assess system hardening, resulting in a hardening index score of 63, indicating a reasonably secure baseline configuration. The audit confirmed that key security controls such as firewall enforcement and secure SSH settings were correctly implemented, while identifying the absence of a malware scanner as a potential improvement area.
+
+Network security testing using Nmap showed that only essential services were exposed, reducing the system’s attack surface. Access control verification confirmed that SSH password authentication was disabled and root login was restricted. A review of running services showed that all active services were necessary and justified. Overall, this phase demonstrated effective security practices while highlighting areas for future hardening.
